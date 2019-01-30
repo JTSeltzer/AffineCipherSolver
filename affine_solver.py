@@ -21,8 +21,9 @@ def singleWordAffine(word, a, b):
 # are no more words in the word list.
 def recursiveSearch(wordList, aVals, bVals):
   
-  # If there are no words left in the wordlist, return the a and b values
-  if (len(wordList) <= 0):
+  # If there are no words left in the wordlist, or the longest word is 1 letter long,
+  # return the a and b values
+  if ((len(wordList) <= 0) or (len(wordList[0]) <= 1)):
     return aVals, bVals
   
   aList = []
