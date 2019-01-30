@@ -11,6 +11,46 @@ def singleWordAffine(word, a, b):
   outputWord = [chr(number + 97) for number in asciiWord]
   return ''.join(outputWord)
 
+def recursiveSearch(wordList, aVals, bVals):
+  
+  # if there are no words left in the wordlist, return the a and b values
+  if (len(wordList) <= 0):
+    return aVals, bVals
+  
+  aList = []
+  bList = []
+  
+  # if this is the first time the recursiveSearch function has been called, iterate over
+  # every possible combination of a and b values.
+  if (len(wordList) == len(sys.argv)):
+    for i in range(0, len(aVals)):
+      for j in range(0, len(bVals)):
+        
+        # if the current longest word in the wordlist, and the a and b values decode to a word
+        # in the dictionary of words (lines), append the a and b values to a new list
+        if (singleWordAffine(wordList[0], aVals[i], bVals[j]) in lines):
+          aList.append(aVals[i])
+          bList.append(bVals[j])
+  
+  # if this is not the first time the recursiveSearch function has been called, then there should
+  # be pairs of a and b values. Cycle through each pair.
+  else:
+    for i in range(0, len(aVals)):\
+    
+      # if the current longest word in the wordlist, and the a and b values decode to a word
+      # in the dictionary of words (lines), append the a and b values to a new list
+      if (singleWordAffine(wordList[0], aVals[i], bVals[i]) in lines):
+        aList.append(aVals[i])
+        bList.append(bVals[i])
+  
+  # if either aList or bList contain more than one number, and neither is empty, call
+  # recursiveSearch again with the next longest word, and the new a and b pairs
+  if ((len(aList) * len(bList)) > 1):
+    wordList.pop(0)
+    aList, bList = recursiveSearch(wordList, aList, bList)
+    
+  return aList, bList
+
 # if no argument is given, instruct on use
 if (len(sys.argv) < 2):
   print "To use, enter a message to attempt to decrypt as an argument."
@@ -18,21 +58,21 @@ if (len(sys.argv) < 2):
 
 # Pop the first argument (the program), and then combine all other arguments to form a single string
 sys.argv.pop(0)
+
+# create a string from all of the arguments
 cipherInput = ' '.join(sys.argv)
 
 # sort the words of the input string by length
-sortedWords = sorted(cipherInput.split(" "), key = len, reverse = True)
-
-aList = []
-bList = []
+sortedWords = sorted(sys.argv, key = len, reverse = True)
 
 # read in the file of words
 with open('/home/boz/Documents/python/DailyProgrammer/AffineCipherSolver/enable1.txt') as f:
   lines = f.read().splitlines()
 
-for i in range(1, 27):
-  for j in range(1, 27):
-    if (singleWordAffine(sortedWords[0], i, j) in lines):
-      aList.append(i)
-      bList.append(j)
-      print (i, j, ' '.join([singleWordAffine(word, i, j) for word in cipherInput.split(" ")]))
+aList = range(1, 27)
+bList = range(1, 27)
+
+aList, bList = recursiveSearch(sortedWords, aList, bList)
+
+for i in range (0, len(aList)):
+  print ' '.join([singleWordAffine(word, aList[i], bList[i]) for word in cipherInput.split(" ")])
