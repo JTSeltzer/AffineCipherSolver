@@ -35,7 +35,7 @@ def recursiveSearch(wordList, aVals, bVals):
   # if this is not the first time the recursiveSearch function has been called, then there should
   # be pairs of a and b values. Cycle through each pair.
   else:
-    for i in range(0, len(aVals)):\
+    for i in range(0, len(aVals)):
     
       # if the current longest word in the wordlist, and the a and b values decode to a word
       # in the dictionary of words (lines), append the a and b values to a new list
