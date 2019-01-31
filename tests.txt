@@ -1,0 +1,17 @@
+NLWC WC M NECN
+this is a test
+
+YEQ LKCV BDK XCGK EZ BDK UEXLVM QPLQGWSKMB
+you lead the race of the worlds unluckiest
+
+Yeq lkcv bdk xcgk ez bdk uexlv'm qplqgwskmb.
+You lead the race of the world's unluckiest.
+
+input3 = "NH WRTEQ TFWRX TGY T YEZVXH GJNMGRXX STPGX NH XRGXR TX QWZJDW ZK WRNUZFB P WTY YEJGB ZE RNSQPRY XZNR YJUU ZSPTQR QZ QWR YETPGX ZGR NPGJQR STXQ TGY URQWR VTEYX WTY XJGB
+output3 = "my heart aches and a drowsy numbness pains my sense as though of hemlock i had drunk or emptied some dull opiate to the drains one minute past and lethe wards had sunk
+
+Nh wrteq tfwrx, tgy t yezvxh gjnmgrxx stpgx / Nh xrgxr, tx qwzjdw zk wrnuzfb p wty yejgb, / Ze rnsqpry xznr yjuu zsptqr qz qwr yetpgx / Zgr npgjqr stxq, tgy Urqwr-vteyx wty xjgb.
+My heart aches, and a drowsy numbness pains / My sense, as though of hemlock I had drunk, / Or emptied some dull opiate to the drains / One minute past, and Lethe-wards had sunk.
+
+ICH NPJTX MUZDS OZK QPLGB ZWHU ICH EFYR AZV
+the quick brown fox jumps over the lazy dog
